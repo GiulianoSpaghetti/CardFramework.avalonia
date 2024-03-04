@@ -8,11 +8,12 @@
     <Title>CardFramework.avalonia</Title>
     <Description>Un framework per la costruzione di giochi di carte in avalonia</Description>
     <Copyright>2024 Giulio Sorrentino</Copyright>
-    <PackageProjectUrl>https://github.com/numerunix/CardGame.Avalonia/blob/master/README.md</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/numerunix/CardFramework.avalonia/blob/master/README.md</PackageProjectUrl>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>cardgame</PackageTags>
     <PackageReleaseNotes>Release iniziale</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/numerunix/CardFramework.avalonia</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
