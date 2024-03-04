@@ -10,7 +10,7 @@ Il codice di apertura deve essere:
     m = new Mazzo(e);
    
     m.SetNome(o.nomeMazzo);
-    Carta.Inizializza(m, numerocarte, CartaHelperBriscola.GetIstanza(e), d);
+    Carta.Inizializza(path dei mazzi, m, numerocarte, CartaHelperBriscola.GetIstanza(e), d);
 
     if (o.nomeMazzo == "Napoletano")
     {
