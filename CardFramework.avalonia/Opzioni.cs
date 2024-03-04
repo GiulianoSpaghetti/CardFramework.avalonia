@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CBriscola.Avalonia
+namespace org.altervista.numerone.framework
 {
-    internal class Opzioni
+    public class Opzioni
     {
         public string NomeUtente { get; set; }
         public string NomeCpu { get; set; }

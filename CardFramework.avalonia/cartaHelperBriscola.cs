@@ -9,6 +9,7 @@
 
 using Avalonia.Controls;
 using System;
+using System.Data;
 using System.Windows;
 
 namespace org.altervista.numerone.framework
@@ -42,24 +43,27 @@ namespace org.altervista.numerone.framework
 			}
 			return valore;
 		}
-        public string GetSemeStr(UInt16 carta, String mazzo, Avalonia.Controls.ResourceDictionary d)
+        public string GetSemeStr(UInt16 carta, String mazzo, string s0, string s1, string s2, string s3, string s4, string s5, string s6, string s7)
         {
             string s = "a";
             if (mazzo == "Bergamasco" || mazzo == "Bolognese" || mazzo == "Bresciano" || mazzo == "Napoletano" || mazzo == "Romagnolo" || mazzo == "Sardo" || mazzo == "Siciliano" || mazzo == "Trientino" || mazzo == "Trevigiano" || mazzo == "Trentino" || mazzo == "Triestino")
                 switch (carta / 10)
                 {
-                    case 0: s = d["bastoni"] as String; break;
-                    case 1: s = d["coppe"] as String; break;
-                    case 2: s = d["denari"] as String; break;
-                    case 3: s = d["spade"] as String; break;
+                    case 0: s = s0 as String; break;
+                    case 1: s = s1 as String; break;
+                    case 2: s = s2 as String; break;
+                    case 3: s = s3 as String; break;
+					default: throw new ArgumentException("Chiamata a getsemestr con seme > 3");
                 }
             else
                 switch (carta / 10)
                 {
-                    case 0: s = d["Fiori"] as String; break;
-                    case 1: s = d["Quadri"] as String; break;
-                    case 2: s = d["Cuori"] as String; break;
-                    case 3: s = d["Picche"] as String; break;
+                    case 0: s = s4 as String; break;
+                    case 1: s = s5 as String; break;
+                    case 2: s = s6 as String; break;
+                    case 3: s = s7 as String; break;
+                    default:
+						throw new ArgumentException("Chiamata a getsemestr con seme > 3");
                 }
             return s;
         }
