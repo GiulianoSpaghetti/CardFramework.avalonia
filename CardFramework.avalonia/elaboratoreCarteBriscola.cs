@@ -22,24 +22,22 @@ namespace org.altervista.numerone.framework
 		{
 			inizio = true;
 			briscolaDaPunti = punti;
-			doppione = new bool[min+a];
-			numeroCarte = a;
-			min = m;
-			max = n;
+            numeroCarte = a;
+            min = m;
+            max = n;
+            doppione = new bool[min+numeroCarte];
 			if (a != max - min + 1)
 				throw new ArgumentException("Chiamata a elaboratorecartebriscola con a!=max-min+1");
             for (int i = 0; i < a; i++)
-                doppione[i] = false;
+                doppione[i] = i<min;
         }
 		public UInt16 GetCarta()
 		{
 			UInt16 fine = (UInt16)(r.Next(min, max)),
-			Carta = (UInt16)((fine + 1) % numeroCarte);
+			Carta = (UInt16)((fine + 1) % (min+numeroCarte));
 			while (doppione[Carta] && Carta != fine)
 			{
-				Carta = (UInt16)((Carta + 1) % numeroCarte);
-				if (Carta < min)
-					Carta = min;
+				Carta = (UInt16)((Carta + 1) % (min+numeroCarte));
 			}
 			if (doppione[Carta])
 				throw new ArgumentException("Chiamato elaboratoreCarteItaliane::getCarta() quando non ci sono più carte da elaborare");

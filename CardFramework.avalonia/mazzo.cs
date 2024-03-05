@@ -31,7 +31,7 @@ namespace org.altervista.numerone.framework
         public UInt16 GetNumeroCarte() { return numeroCarte; }
         public UInt16 GetCarta()
         {
-            if (numeroCarte > 40)
+            if (numeroCarte > elaboratore.GetNumeroCarte())
                 throw new IndexOutOfRangeException();
             UInt16 c = carte[--numeroCarte];
             return c;

@@ -83,7 +83,7 @@ namespace org.altervista.numerone.framework
                     }
                 else
                 {
-                    carte[i].img = new Bitmap(AssetLoader.Open(new Uri($"avares://{Assembly.GetEntryAssembly().GetName().Name}/Assets/{i}.png")));
+                    carte[i].img = new Bitmap(AssetLoader.Open(new Uri($"avares://Solitario/Assets/{i}.png")));
                 }
                 carte[i].semeStr = helper.GetSemeStr(i, m.GetNome(), s0, s1, s2, s3, s4, s5, s6, s7);
             }
