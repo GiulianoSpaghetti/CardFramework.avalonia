@@ -1,12 +1,4 @@
-﻿using org.altervista.numerone.framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CardFramework.maui
+﻿namespace org.altervista.numerone.framework
 {
     public class CartaHelperSolitario : CartaHelper
     {

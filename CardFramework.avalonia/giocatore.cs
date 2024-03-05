@@ -8,7 +8,6 @@
  */
 
 using Avalonia.Media.Imaging;
-using System;
 
 namespace org.altervista.numerone.framework
 {

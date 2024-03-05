@@ -8,13 +8,9 @@
  */
 
 
-using Avalonia.Controls;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
-using System;
-using System.IO;
 using System.Reflection;
-using System.Resources;
 
 namespace org.altervista.numerone.framework
 {
@@ -24,25 +20,25 @@ namespace org.altervista.numerone.framework
                    valore,
                    punteggio;
         private string semeStr;
-        private readonly CartaHelper helper;
+        private static CartaHelper helper;
         private readonly static Carta[] carte = new Carta[40];
         private Bitmap img;
 
-        private Carta(UInt16 n, CartaHelper h)
+        private Carta(UInt16 n)
         {
-            helper = h;
             seme = helper.GetSeme(n);
             valore = helper.GetValore(n);
             punteggio = helper.GetPunteggio(n);
         }
         public static void Inizializza(string path, Mazzo m, ushort n, CartaHelper h, string s0, string s1, string s2, string s3, string s4, string s5, string s6, string s7)
         {
+            helper = h;
             for (UInt16 i = 0; i < n; i++)
             {
-                carte[i] = new Carta(i, h);
+                carte[i] = new Carta(i);
 
             }
-            CaricaImmagini(path,m, n, h, s0,s1,s2,s3,s4,s5,s6,s7);
+            CaricaImmagini(path,m, n, s0,s1,s2,s3,s4,s5,s6,s7);
         }
         public static Carta GetCarta(UInt16 quale) { return carte[quale]; }
         public UInt16 GetSeme() { return seme; }
@@ -68,7 +64,7 @@ namespace org.altervista.numerone.framework
             return img;
         }
 
-        public static bool CaricaImmagini(String path, Mazzo m, ushort n, CartaHelper helper, string s0, string s1, string s2, string s3, string s4, string s5, string s6, string s7)
+        public static bool CaricaImmagini(String path, Mazzo m, ushort n, string s0, string s1, string s2, string s3, string s4, string s5, string s6, string s7)
         {
             String s = $"{System.IO.Path.Combine(path, "Mazzi")}";
             for (UInt16 i = 0; i < n; i++)
@@ -82,7 +78,7 @@ namespace org.altervista.numerone.framework
                     catch (Exception ex)
                     {
                         m.SetNome("Napoletano");
-                        CaricaImmagini(path, m, n, helper, s0, s1, s2, s3, s4, s5, s6, s7);
+                        CaricaImmagini(path, m, n, s0, s1, s2, s3, s4, s5, s6, s7);
                         return false;
                     }
                 else
@@ -92,6 +88,18 @@ namespace org.altervista.numerone.framework
                 carte[i].semeStr = helper.GetSemeStr(i, m.GetNome(), s0, s1, s2, s3, s4, s5, s6, s7);
             }
             return true;
+        }
+
+        public static void SetHelper(CartaHelper h) { helper = h; }
+
+        public override string ToString()
+        {
+            string s = $"{valore + 1} di {semeStr}";
+            if (helper is CartaHelperBriscola)
+                s += StessoSeme((helper as CartaHelperBriscola).GetCartaBriscola()) ? "*" : " ";
+            else
+                s += " ";
+            return s;
         }
     }
 }
