@@ -28,7 +28,7 @@ namespace org.altervista.numerone.framework
             doppione = new bool[min+numeroCarte];
 			if (a != max - min + 1)
 				throw new ArgumentException("Chiamata a elaboratorecartebriscola con a!=max-min+1");
-            for (int i = 0; i < a; i++)
+            for (int i = 0; i < min+numeroCarte; i++)
                 doppione[i] = i<min;
         }
 		public UInt16 GetCarta()

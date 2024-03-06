@@ -12,8 +12,10 @@
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>cardgame</PackageTags>
-    <PackageReleaseNotes>Release iniziale</PackageReleaseNotes>
+    <PackageReleaseNotes>Scoperto un bug che non consentiva la corretta inizializzazione del vettore per evitare carte doppie</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/numerunix/CardFramework.avalonia</RepositoryUrl>
+    <Authors>numerone</Authors>
+    <Version>1.2.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

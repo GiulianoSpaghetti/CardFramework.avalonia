@@ -21,7 +21,7 @@ namespace org.altervista.numerone.framework
                    punteggio;
         private string semeStr;
         private static CartaHelper helper;
-        private readonly static Carta[] carte = new Carta[40];
+        private static Carta[] carte;
         private Bitmap img;
 
         private Carta(UInt16 n)
@@ -33,6 +33,7 @@ namespace org.altervista.numerone.framework
         public static void Inizializza(string path, Mazzo m, ushort n, CartaHelper h, string s0, string s1, string s2, string s3, string s4, string s5, string s6, string s7)
         {
             helper = h;
+            carte = new Carta[n];
             for (UInt16 i = 0; i < n; i++)
             {
                 carte[i] = new Carta(i);
@@ -83,7 +84,7 @@ namespace org.altervista.numerone.framework
                     }
                 else
                 {
-                    carte[i].img = new Bitmap(AssetLoader.Open(new Uri($"avares://Solitario/Assets/{i}.png")));
+                    carte[i].img = new Bitmap(AssetLoader.Open(new Uri($"avares://{Assembly.GetEntryAssembly().GetName().Name}/Assets/{i}.png")));
                 }
                 carte[i].semeStr = helper.GetSemeStr(i, m.GetNome(), s0, s1, s2, s3, s4, s5, s6, s7);
             }
