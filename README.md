@@ -6,11 +6,11 @@ Il codice di apertura deve essere:
     o = LeggiOpzioni();
     briscolaDaPunti = o.briscolaDaPunti;
 
-    e = new ElaboratoreCarteBriscola(briscolaDaPunti);
+    e = new ElaboratoreCarteBriscola(briscolaDaPunti. 0, 39, 40);
     m = new Mazzo(e);
    
     m.SetNome(o.nomeMazzo);
-    Carta.Inizializza(path dei mazzi, m, numerocarte, CartaHelperBriscola.GetIstanza(e), d);
+    Carta.Inizializza(path dei mazzi, m, numerocarte, new CartaHelperBriscola(e.GetCartaBriscola), "bastoni", "coppe", "denari", "spade", "fiori", "quadri", "cuori", "picche");
 
     if (o.nomeMazzo == "Napoletano")
     {
