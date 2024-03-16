@@ -11,20 +11,24 @@
             return 2;
         }
 
-        public override ushort Gioca(ushort x, Carta[] mano, ushort numeroCarte, Carta c)
+        public override ushort Gioca(ushort x, Carta[] mano, ushort numeroCarte, Carta c, bool stessoSeme)
         {
+            UInt16 carta=(UInt16) mano.Length;
             UInt16 i = (UInt16)ElaboratoreCarteBriscola.r.Next(0, UInt16.MaxValue);
             if (!briscola.StessoSeme(c))
             {
                 if ((i = getSoprataglio(mano, c, true)) < numeroCarte)
-                    return i;
+                    carta = i;
                 else
-                    for (i = 0; i < mano.Length - 1; i++)
+                    for (i = 0; i < (mano.Length - 1) && carta==mano.Length; i++)
                         if (briscola.StessoSeme(mano[i]))
-                            return i;
+                            carta = i;
             }
-            i = 0;
-            return i;
+            if (carta == mano.Length && stessoSeme)
+                carta = GetPrimaCartaConSeme(mano, numeroCarte, c);
+            if (carta==mano.Length)
+                carta= 0;
+            return carta;
         }
     }
 }

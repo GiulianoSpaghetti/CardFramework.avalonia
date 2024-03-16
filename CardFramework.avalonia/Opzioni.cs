@@ -14,5 +14,6 @@ namespace org.altervista.numerone.framework
         public bool avvisaTalloneFinito { get; set; }
         public string nomeMazzo { get; set;}
         public UInt16 livello { get; set; }
+        public bool stessoSeme { get; set; }
     }
 }

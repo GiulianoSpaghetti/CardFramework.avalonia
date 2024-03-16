@@ -93,6 +93,7 @@ namespace org.altervista.numerone.framework
 
         public static void SetHelper(CartaHelper h) { helper = h; }
 
+        public static Carta GetCartaBriscola() { return (helper as CartaHelperBriscola).GetCartaBriscola(); }
         public override string ToString()
         {
             string s = $"{valore + 1} di {semeStr}";

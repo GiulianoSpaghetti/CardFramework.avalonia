@@ -11,7 +11,7 @@ public class GiocatoreHelperCpu2 : GiocatoreHelperCpu
         return 3;
     }
 
-    public override ushort Gioca(ushort x, Carta[] mano, ushort numeroCarte, Carta c)
+    public override ushort Gioca(ushort x, Carta[] mano, ushort numeroCarte, Carta c, bool stessoSeme)
     {
         UInt16 i = (UInt16)ElaboratoreCarteBriscola.r.Next(0, UInt16.MaxValue);
         if (!briscola.StessoSeme(c))
@@ -32,7 +32,10 @@ public class GiocatoreHelperCpu2 : GiocatoreHelperCpu
             if (ElaboratoreCarteBriscola.r.Next() % 10 < 5 && (i = getSoprataglio(mano, c, false)) < numeroCarte)
                 return i;
         }
-        i = 0;
+        if (stessoSeme)
+           i = GetPrimaCartaConSeme(mano, numeroCarte, c);
+        if (i == numeroCarte)
+            i = 0;
         return i;
     }
 }

@@ -99,9 +99,9 @@ namespace org.altervista.numerone.framework
 		{
 			iCartaGiocata = helper.Gioca(i, mano, numeroCarte);
 		}
-		public void Gioca(UInt16 i, Giocatore g1)
+		public void Gioca(UInt16 i, Giocatore g1, bool stessoSeme=false)
 		{
-			iCartaGiocata = helper.Gioca(i, mano, numeroCarte, g1.GetCartaGiocata());
+			iCartaGiocata = helper.Gioca(i, mano, numeroCarte, g1.GetCartaGiocata(), stessoSeme);
 		}
 		public void AggiornaPunteggio(Giocatore g)
 		{

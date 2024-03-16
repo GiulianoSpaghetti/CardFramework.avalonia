@@ -7,6 +7,8 @@
  *
  */
 
+using System.Reflection.Metadata.Ecma335;
+
 namespace org.altervista.numerone.framework
 {
     public abstract class GiocatoreHelperCpu : GiocatoreHelper
@@ -53,6 +55,16 @@ namespace org.altervista.numerone.framework
             else
                 return (UInt16)mano.Length;
         }
+
+        protected UInt16 GetPrimaCartaConSeme(Carta[] mano, UInt16 numeroCarte, Carta c)
+        {
+            UInt16 ca=numeroCarte;
+            for (UInt16 i = 0; i < numeroCarte && ca==numeroCarte; i++)
+                if (c.StessoSeme(mano[i]))
+                    ca = i;
+            return ca;
+                
+        }
         public UInt16 Gioca(UInt16 x, Carta[] mano, UInt16 numeroCarte)
         {
             UInt16 i;
@@ -62,7 +74,7 @@ namespace org.altervista.numerone.framework
             return i;
 
         }
-        public abstract UInt16 Gioca(UInt16 x, Carta[] mano, UInt16 numeroCarte, Carta c);
+        public abstract UInt16 Gioca(UInt16 x, Carta[] mano, UInt16 numeroCarte, Carta c, bool stessoSeme);
         public void AggiornaPunteggio(ref UInt16 punteggioAttuale, Carta c, Carta c1) { punteggioAttuale = (UInt16)(punteggioAttuale + c.GetPunteggio() + c1.GetPunteggio()); }
 
         public abstract UInt16 GetLivello();

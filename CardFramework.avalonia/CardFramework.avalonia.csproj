@@ -12,10 +12,11 @@
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>cardgame</PackageTags>
-    <PackageReleaseNotes>Scoperto un bug che non consentiva la corretta inizializzazione del vettore per evitare carte doppie</PackageReleaseNotes>
+    <PackageReleaseNotes>Ora offre la possibilità di rispondere con lo stesso seme</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/numerunix/CardFramework.avalonia</RepositoryUrl>
     <Authors>numerone</Authors>
-    <Version>1.2.1</Version>
+    <Version>1.3.0</Version>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,7 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\CBriscola-Demo\CBriscola-Demo.Android\Icon.png">
+    <None Include="C:\Users\numer\Downloads\Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\CBriscola.Avalonia\LICENSE.txt">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
@@ -34,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.0.9" />
+    <PackageReference Include="Avalonia" Version="11.0.10" />
   </ItemGroup>
 
 </Project>
