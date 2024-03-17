@@ -12,10 +12,10 @@
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>cardgame</PackageTags>
-    <PackageReleaseNotes>Ora offre la possibilità di rispondere con lo stesso seme</PackageReleaseNotes>
+    <PackageReleaseNotes>Bugfixes sui valori limite, ora non restituisce più indici fuori scala.</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/numerunix/CardFramework.avalonia</RepositoryUrl>
     <Authors>numerone</Authors>
-    <Version>1.3.0</Version>
+    <Version>1.3.2</Version>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 

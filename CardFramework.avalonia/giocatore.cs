@@ -101,11 +101,11 @@ namespace org.altervista.numerone.framework
 		}
 		public void Gioca(UInt16 i, Giocatore g1, bool stessoSeme=false)
 		{
-			iCartaGiocata = helper.Gioca(i, mano, numeroCarte, g1.GetCartaGiocata(), stessoSeme);
+             iCartaGiocata = helper.Gioca(i, mano, numeroCarte, g1.GetCartaGiocata(), stessoSeme);
 		}
 		public void AggiornaPunteggio(Giocatore g)
 		{
-			helper.AggiornaPunteggio(ref punteggio, GetCartaGiocata(), g.GetCartaGiocata());
+            helper.AggiornaPunteggio(ref punteggio, GetCartaGiocata(), g.GetCartaGiocata());
 		}
 
         public Bitmap GetImmagine(UInt16 quale)

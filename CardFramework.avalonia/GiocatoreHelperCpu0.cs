@@ -18,10 +18,11 @@
                 if (briscola.StessoSeme(mano[i]))
                     carta = i;
 
-            if (carta == numeroCarte && stessoSeme)
-                carta = GetPrimaCartaConSeme(mano, numeroCarte, c);
             if (carta == numeroCarte)
-                carta = 0;
+                if (stessoSeme)
+                    carta = GetPrimaCartaConSeme(mano, numeroCarte, c);
+                else
+                    carta = 0;
             return carta;
         }
     }

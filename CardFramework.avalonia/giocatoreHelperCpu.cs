@@ -14,10 +14,10 @@ namespace org.altervista.numerone.framework
     public abstract class GiocatoreHelperCpu : GiocatoreHelper
     {
         protected readonly Carta briscola;
-        protected UInt16 GetBriscola(Carta[] mano)
+        protected UInt16 GetBriscola(Carta[] mano, UInt16 numeroCarte)
         {
             UInt16 i;
-            for (i = 0; i < mano.Length; i++)
+            for (i = 0; i < numeroCarte; i++)
                 if (briscola.StessoSeme(mano[i]))
                     break;
             return i;
@@ -26,13 +26,13 @@ namespace org.altervista.numerone.framework
         {
             briscola = Carta.GetCarta(b);
         }
-        protected UInt16 getSoprataglio(Carta[] mano, Carta c, bool maggiore)
+        protected UInt16 getSoprataglio(Carta[] mano, UInt16 numeroCarte, Carta c, bool maggiore)
         {
             bool trovata = false;
             UInt16 i;
             if (maggiore)
             {
-                for (i = (UInt16)(mano.Length - 1); i > 0; i--)
+                for (i = (UInt16)(numeroCarte - 1); i <numeroCarte; i--)
                     if (c.StessoSeme(mano[i]) && c.CompareTo(mano[i]) > 0)
                     {
                         trovata = true;
@@ -43,7 +43,7 @@ namespace org.altervista.numerone.framework
             }
             else
             {
-                for (i = 0; i < mano.Length; i++)
+                for (i = 0; i < numeroCarte; i++)
                     if (c.StessoSeme(mano[i]) && c.CompareTo(mano[i]) > 0)
                     {
                         trovata = true;
@@ -53,7 +53,7 @@ namespace org.altervista.numerone.framework
             if (trovata)
                 return i;
             else
-                return (UInt16)mano.Length;
+                return numeroCarte;
         }
 
         protected UInt16 GetPrimaCartaConSeme(Carta[] mano, UInt16 numeroCarte, Carta c)
@@ -68,8 +68,8 @@ namespace org.altervista.numerone.framework
         public UInt16 Gioca(UInt16 x, Carta[] mano, UInt16 numeroCarte)
         {
             UInt16 i;
-            for (i = (UInt16)(numeroCarte - 1); i > 0; i--) ;
-            if ((mano[i].GetPunteggio() > 4 || briscola.StessoSeme(mano[i])))
+            for (i = (UInt16)(numeroCarte - 1); i<numeroCarte; i--) ;
+            if ((i >= numeroCarte) || (mano[i].GetPunteggio() > 4 || briscola.StessoSeme(mano[i])))
                 i = 0;
             return i;
 

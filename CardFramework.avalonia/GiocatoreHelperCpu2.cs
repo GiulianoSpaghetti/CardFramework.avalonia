@@ -16,9 +16,9 @@ public class GiocatoreHelperCpu2 : GiocatoreHelperCpu
         UInt16 i = (UInt16)ElaboratoreCarteBriscola.r.Next(0, UInt16.MaxValue);
         if (!briscola.StessoSeme(c))
         {
-            if ((i = getSoprataglio(mano, c, true)) < numeroCarte)
+            if ((i = getSoprataglio(mano, numeroCarte, c, true)) < numeroCarte)
                 return i;
-            if (c.GetPunteggio() > 0 && (i = GetBriscola(mano)) < numeroCarte)
+            if (c.GetPunteggio() > 0 && (i = GetBriscola(mano, numeroCarte)) < numeroCarte)
             {
                 if (c.GetPunteggio() > 4)
                     return i;
@@ -29,12 +29,12 @@ public class GiocatoreHelperCpu2 : GiocatoreHelperCpu
         }
         else
         {
-            if (ElaboratoreCarteBriscola.r.Next() % 10 < 5 && (i = getSoprataglio(mano, c, false)) < numeroCarte)
+            if (ElaboratoreCarteBriscola.r.Next() % 10 < 5 && (i = getSoprataglio(mano, numeroCarte, c, false)) < numeroCarte)
                 return i;
         }
         if (stessoSeme)
            i = GetPrimaCartaConSeme(mano, numeroCarte, c);
-        if (i == numeroCarte)
+        if (i >= numeroCarte)
             i = 0;
         return i;
     }

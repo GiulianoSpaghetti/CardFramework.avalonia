@@ -13,21 +13,22 @@
 
         public override ushort Gioca(ushort x, Carta[] mano, ushort numeroCarte, Carta c, bool stessoSeme)
         {
-            UInt16 carta=(UInt16) mano.Length;
+            UInt16 carta=numeroCarte;
             UInt16 i = (UInt16)ElaboratoreCarteBriscola.r.Next(0, UInt16.MaxValue);
             if (!briscola.StessoSeme(c))
             {
-                if ((i = getSoprataglio(mano, c, true)) < numeroCarte)
+                if ((i = getSoprataglio(mano, numeroCarte, c, true)) < numeroCarte)
                     carta = i;
                 else
-                    for (i = 0; i < (mano.Length - 1) && carta==mano.Length; i++)
+                    for (i = 0; i < (numeroCarte - 1) && carta==numeroCarte; i++)
                         if (briscola.StessoSeme(mano[i]))
                             carta = i;
             }
-            if (carta == mano.Length && stessoSeme)
-                carta = GetPrimaCartaConSeme(mano, numeroCarte, c);
-            if (carta==mano.Length)
-                carta= 0;
+            if (carta == numeroCarte)
+                if (stessoSeme)
+                    carta = GetPrimaCartaConSeme(mano, numeroCarte, c);
+                else
+                    carta = 0;
             return carta;
         }
     }
