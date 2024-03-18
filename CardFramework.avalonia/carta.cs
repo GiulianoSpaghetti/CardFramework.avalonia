@@ -30,7 +30,7 @@ namespace org.altervista.numerone.framework
             valore = helper.GetValore(n);
             punteggio = helper.GetPunteggio(n);
         }
-        public static void Inizializza(string path, Mazzo m, ushort n, CartaHelper h, string s0, string s1, string s2, string s3, string s4, string s5, string s6, string s7)
+        public static void Inizializza(string path, Mazzo m, ushort n, CartaHelper h, string s0, string s1, string s2, string s3, string s4, string s5, string s6, string s7, string assembly)
         {
             helper = h;
             carte = new Carta[n];
@@ -39,7 +39,7 @@ namespace org.altervista.numerone.framework
                 carte[i] = new Carta(i);
 
             }
-            CaricaImmagini(path,m, n, s0,s1,s2,s3,s4,s5,s6,s7);
+            CaricaImmagini(path,m, n, s0,s1,s2,s3,s4,s5,s6,s7, assembly);
         }
         public static Carta GetCarta(UInt16 quale) { return carte[quale]; }
         public UInt16 GetSeme() { return seme; }
@@ -65,7 +65,7 @@ namespace org.altervista.numerone.framework
             return img;
         }
 
-        public static bool CaricaImmagini(String path, Mazzo m, ushort n, string s0, string s1, string s2, string s3, string s4, string s5, string s6, string s7)
+        public static bool CaricaImmagini(String path, Mazzo m, ushort n, string s0, string s1, string s2, string s3, string s4, string s5, string s6, string s7, String assembly)
         {
             String s = $"{System.IO.Path.Combine(path, "Mazzi")}";
             for (UInt16 i = 0; i < n; i++)
@@ -79,12 +79,12 @@ namespace org.altervista.numerone.framework
                     catch (Exception ex)
                     {
                         m.SetNome("Napoletano");
-                        CaricaImmagini(path, m, n, s0, s1, s2, s3, s4, s5, s6, s7);
+                        CaricaImmagini(path, m, n, s0, s1, s2, s3, s4, s5, s6, s7, assembly);
                         return false;
                     }
                 else
                 {
-                    carte[i].img = new Bitmap(AssetLoader.Open(new Uri($"avares://{Assembly.GetEntryAssembly().GetName().Name}/Assets/{i}.png")));
+                    carte[i].img = new Bitmap(AssetLoader.Open(new Uri($"avares://{assembly}/Assets/{i}.png")));
                 }
                 carte[i].semeStr = helper.GetSemeStr(i, m.GetNome(), s0, s1, s2, s3, s4, s5, s6, s7);
             }
