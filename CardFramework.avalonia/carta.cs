@@ -93,12 +93,12 @@ namespace org.altervista.numerone.framework
 
         public static void SetHelper(CartaHelper h) { helper = h; }
 
-        public static Carta GetCartaBriscola() { return (helper as CartaHelperBriscola).GetCartaBriscola(); }
+        public static Carta GetCartaBriscola() { return (helper as org.altervista.numerone.framework.briscola.CartaHelper).GetCartaBriscola(); }
         public override string ToString()
         {
             string s = $"{valore + 1} di {semeStr}";
-            if (helper is CartaHelperBriscola)
-                s += StessoSeme((helper as CartaHelperBriscola).GetCartaBriscola()) ? "*" : " ";
+            if (helper is org.altervista.numerone.framework.briscola.CartaHelper)
+                s += StessoSeme((helper as org.altervista.numerone.framework.briscola.CartaHelper).GetCartaBriscola()) ? "*" : " ";
             else
                 s += " ";
             return s;
