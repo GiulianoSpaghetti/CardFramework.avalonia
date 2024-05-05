@@ -107,7 +107,10 @@ namespace org.altervista.numerone.framework
 		{
             helper.AggiornaPunteggio(ref punteggio, GetCartaGiocata(), g.GetCartaGiocata());
 		}
-
+        public void Gioca(UInt16 i, List<Carta> piatto)
+        {
+            iCartaGiocata = helper.Gioca(i, mano, numeroCarte, piatto);
+        }
         public Bitmap GetImmagine(UInt16 quale)
         {
             return mano[quale].GetImmagine();
