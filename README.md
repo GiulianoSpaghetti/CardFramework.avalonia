@@ -6,11 +6,11 @@ Il codice di apertura deve essere:
     o = LeggiOpzioni();
     briscolaDaPunti = o.briscolaDaPunti;
 
-    e = new ElaboratoreCarteBriscola(briscolaDaPunti. 0, 39, 40);
+    e = new ElaboratoreCarteBriscola(briscolaDaPunti, 0, 39, 40);
     m = new Mazzo(e);
    
     m.SetNome(o.nomeMazzo);
-    Carta.Inizializza(path dei mazzi, m, numerocarte, new CartaHelperBriscola(e.GetCartaBriscola), "bastoni", "coppe", "denari", "spade", "fiori", "quadri", "cuori", "picche");
+    Carta.Inizializza(path dei mazzi, m, numerocarte, new org.altervista.numerone.framework.briscola.CartaHelper(e.GetCartaBriscola), "bastoni", "coppe", "denari", "spade", "fiori", "quadri", "cuori", "picche");
 
     if (o.nomeMazzo == "Napoletano")
     {
@@ -52,3 +52,6 @@ una volta fatto questo, in carta si avrà un vettore di numerocarte elementi, in
 che saranno riempite con addcarta.
 Quando addcarta restituisce un IndexOutOfRangeException exception si avrà la fine del mazzo.
 Utente0-dimensionemano sono le Image XAML corrispondenti alle carte del giocatore, mentre Cpu0-dimensionemano sono le Image corrispondenti alle carte della cpu.
+
+Se avete un gioco di carte sul piatto, il modo di agire dei giocatori professionisti è quello di crearsi mentalmente il grafo di presa. Mi spiego: per la scopa in mano ho un 8, è prendibile tramite 7+1 e 6+2, entrambi vanno bene.
+Vanno messi in un grafo e va così scomposto l'8, per poi prendere sulla base del piatto quello che consuma il maggior numero di carte del piatto stesso. Quindi se ho 8 e 10 e posso prendere più carte che con l'8 invece che col 10, va giocato l'8.

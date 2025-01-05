@@ -24,13 +24,34 @@ namespace org.altervista.numerone.framework
         private static Carta[] carte;
         private Bitmap img;
 
+        /// <summary>
+        /// Costruttore privato perché le carte devono essere immutabili.
+        /// </summary>
+        /// <param name="n">numero intero indicante il numero intero della carta</param>
         private Carta(UInt16 n)
         {
             seme = helper.GetSeme(n);
             valore = helper.GetValore(n);
             punteggio = helper.GetPunteggio(n);
         }
-        public static void Inizializza(string path, Mazzo m, ushort n, CartaHelper h, string s0, string s1, string s2, string s3, string s4, string s5, string s6, string s7, string assembly)
+        /// <summary>
+        /// Vero costruttore, identifica un numero di carte pari ad n, careica le immagini dal filesystem se possibile ed inizializza il vettore delle carte
+        /// </summary>
+        /// <param name="path">path da cui caricare le immagini sul filesystem</param>
+        /// <param name="m">prende il nome del mazzo ed identifica se va caricata dal filesystemo dalle risorse</param>
+        /// <param name="n">numero delle carte</param>
+        /// <param name="h">per evitare una ereditarietà selvaggia, si è scelto di usare una classe a parte per il comportamento specifico della classe</param>
+        /// <param name="s0">prima delle 4 stringhe indicante il seme italiano</param>
+        /// <param name="s1">seconda delle 4 stringhe indicante il seme italiano</param>
+        /// <param name="s2">terza delle 4 stringhe indicante il seme italiano</param>
+        /// <param name="s3">quarta delle 4 stringhe indicante il seme italiano</param>
+        /// <param name="s4">prima delle 4 stringhe indicante il seme francese</param>
+        /// <param name="s5">seconda delle 4 stringhe indicante il seme francese</param>
+        /// <param name="s6">terza delle 4 stringhe indicante il seme francese</param>
+        /// <param name="s7">quarta delle 4 stringhe indicante il seme francese</param>
+        /// <param name="assembly">assembly dal quale caricare le carte se sono risorse</param>
+        /// <returns>true se non ci sono stati errore, false se si è ricaduti nel caricare le immagini dalle risorse invece che dal filesysteme e non era richiesto</returns>
+        public static bool Inizializza(string path, Mazzo m, ushort n, CartaHelper h, string s0, string s1, string s2, string s3, string s4, string s5, string s6, string s7, string assembly)
         {
             helper = h;
             carte = new Carta[n];
@@ -39,13 +60,39 @@ namespace org.altervista.numerone.framework
                 carte[i] = new Carta(i);
 
             }
-            CaricaImmagini(path,m, n, s0,s1,s2,s3,s4,s5,s6,s7, assembly);
+            return CaricaImmagini(path,m, n, s0,s1,s2,s3,s4,s5,s6,s7, assembly);
         }
+        /// <summary>
+        /// Restituisce la struttura indicante la carta numero quale
+        /// </summary>
+        /// <param name="quale">numero della carta da prendere</param>
+        /// <returns>la struttura indicante la carta presa</returns>
         public static Carta GetCarta(UInt16 quale) { return carte[quale]; }
+        /// <summary>
+        /// Getter che ritorna il seme della carta
+        /// </summary>
+        /// <returns>seme della carta</returns>
         public UInt16 GetSeme() { return seme; }
+        /// <summary>
+        /// Getter che ritorna il valore della carta
+        /// </summary>
+        /// <returns>valore della carta</returns>
         public UInt16 GetValore() { return valore; }
+        /// <summary>
+        /// Getter che restuistuisce il punteggio della carta
+        /// </summary>
+        /// <returns>punteggio della carta</returns>
         public UInt16 GetPunteggio() { return punteggio; }
+        /// <summary>
+        /// Getter che restituisce il seme in valore stringa, uno degli 8 passati ad inizializza
+        /// </summary>
+        /// <returns>il seme in formato stringa della carta</returns>
         public string GetSemeStr() { return semeStr; }
+        /// <summary>
+        /// Dice se due carte hsnno lo stesso seme
+        /// </summary>
+        /// <param name="c1">carta con cui confrontare il seme, può essere null</param>
+        /// <returns>true se la carta chiamante ha lo stesso seme di c1</returns>
         public bool StessoSeme(Carta c1) { if (c1 == null) return false; else return seme == c1.GetSeme(); }
         public int CompareTo(Carta c1)
         {
@@ -54,17 +101,39 @@ namespace org.altervista.numerone.framework
             else
                 return helper.CompareTo(helper.GetNumero(GetSeme(), GetValore()), helper.GetNumero(c1.GetSeme(), c1.GetValore()));
         }
-
+        /// <summary>
+        /// Retituisce l'immagine della carta quale
+        /// </summary>
+        /// <param name="quale">numero della carta</param>
+        /// <returns>l'immagine della carta</returns>
         public static Bitmap GetImmagine(UInt16 quale)
         {
             return carte[quale].img;
         }
-
+        /// <summary>
+        /// Restituisce l'immagine della carta chiamata
+        /// </summary>
+        /// <returns>l'immagine della carta</returns>
         public Bitmap GetImmagine()
         {
             return img;
         }
-
+        /// <summary>
+        /// Carica in memoria le immagini delle carte
+        /// </summary>
+        /// <param name="path">path in cui cercare le carte</param>
+        /// <param name="m">prende il nome del mazzo e stabilisce se caricarle dalle risorse o dal filesystem</param>
+        /// <param name="n">numero di carte da caricare</param>
+        /// <param name="s0">prima delle 4 stringhe indicante il seme italiano</param>
+        /// <param name="s1">seconda delle 4 stringhe indicante il seme italiano</param>
+        /// <param name="s2">terza delle 4 stringhe indicante il seme italiano</param>
+        /// <param name="s3">quarta delle 4 stringhe indicante il seme italiano</param>
+        /// <param name="s4">prima delle 4 stringhe indicante il seme francese</param>
+        /// <param name="s5">seconda delle 4 stringhe indicante il seme francese</param>
+        /// <param name="s6">terza delle 4 stringhe indicante il seme francese</param>
+        /// <param name="s7">quarta delle 4 stringhe indicante il seme francese</param>
+        /// <param name="assembly">assembly dal quale caricare le carte se sono risorse</param>
+        /// <returns>true se le carte sono state caricate, false se le carte sono state caricate dalle risorse e non era richiesto</returns>
         public static bool CaricaImmagini(String path, Mazzo m, ushort n, string s0, string s1, string s2, string s3, string s4, string s5, string s6, string s7, String assembly)
         {
             String s = $"{System.IO.Path.Combine(path, "Mazzi")}";
@@ -91,8 +160,16 @@ namespace org.altervista.numerone.framework
             return true;
         }
 
+        /// <summary>
+        /// setter dela classe che identifica il comportamento che le carte devono avere
+        /// </summary>
+        /// <param name="h">classe che incapsula il comportamti dekke caere</param>
         public static void SetHelper(CartaHelper h) { helper = h; }
 
+        /// <summary>
+        /// restituisce la struttura che identifica il valore di vbriscola
+        /// </summary>
+        /// <returns></returns>
         public static Carta GetCartaBriscola() { return (helper as org.altervista.numerone.framework.briscola.CartaHelper).GetCartaBriscola(); }
         public override string ToString()
         {
