@@ -1,3 +1,7 @@
+:it: Made in Italy. Il primo framework italiano ad essere pubblicato su nuget.
+
+Il primo framework italiano ad avere la documentazione inline.
+
 Framework di numerone in maui per la realizzazione di giochi di carte.
 La codebase è in .net, con l'aggiunta di un resourcedictionary da passare.
 Il resource dictionary deve includere 4 campi: bastoni, coppe, spade e denari da tradurre dall'italiano nella lingua desiderata, i 4 semi dei mazzi di carte italiane, o eventualmente francesi.
