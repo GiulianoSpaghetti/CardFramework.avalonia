@@ -1,5 +1,8 @@
 ﻿namespace org.altervista.numerone.framework;
 
+/// <summary>
+/// Classe che implementa il comportamento della CPU di livello 3
+/// </summary>
 public class GiocatoreHelperCpu2 : GiocatoreHelperCpu
 {
     /// <summary>
@@ -19,7 +22,6 @@ public class GiocatoreHelperCpu2 : GiocatoreHelperCpu
     }
     /// <summary>
     /// Se è il secondo di mano si cerca la carta di maggior valore con lo stesso seme, se non la si trova e si ha briscola e la carta ha peso sceglie se giocare la briscola oppure non può prendere per non far scoprire le carte, se non può prendere se deve rispondere al seme cerca la carta più piccola dello stesso seme, se no gioca la carta più piccola in assoluto
-    /// </summary>
     /// </summary>
     /// <param name="x">indice della carta da giocare, qui non considerato</param>
     /// <param name="mano">vettore delle carte da giocare</param>

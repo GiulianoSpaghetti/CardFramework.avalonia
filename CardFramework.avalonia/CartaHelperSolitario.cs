@@ -1,12 +1,15 @@
 ﻿namespace org.altervista.numerone.framework.solitario
 {
+    /// <summary>
+    /// Interfaccia per modificare il comportamento della classe carta in base al gioco del solitario la ottre di babele
+    /// </summary>
     public class CartaHelper : org.altervista.numerone.framework.CartaHelper
     {
         /// <summary>
-        /// Compara le due carte per stabilire ch sia la maggiore
+        /// Compara le due carte per stabilire chi sia la maggiore
         /// </summary>
-        /// <param name="Carta">prima carta presa in esame</param>
-        /// <param name="Carta1">seconda carta presa in esame</param>
+        /// <param name="carta">prima carta presa in esame</param>
+        /// <param name="carta1">seconda carta presa in esame</param>
         /// <returns>-1 se maggiore la prima, zero se uguale, 1 se maggiore la seconda</returns>
         public int CompareTo(ushort carta, ushort carta1)
         {

@@ -10,6 +10,9 @@
 namespace org.altervista.numerone.framework
 
 {
+    /// <summary>
+    /// Interfaccia per modificare il comportamento della classe mazzo in base al gioco della briscola
+    /// </summary>
     public class ElaboratoreCarteBriscola : ElaboratoreCarte
 	{
 		/// <summary>

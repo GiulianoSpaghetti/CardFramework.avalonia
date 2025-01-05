@@ -11,6 +11,9 @@
 namespace org.altervista.numerone.framework
 
 {
+	/// <summary>
+	/// Classe per modificare il comportamento della classe giocatore in base all'esperienza di gioco dell'utente
+	/// </summary>
     public class GiocatoreHelperUtente : GiocatoreHelper
 	{
 		public GiocatoreHelperUtente()

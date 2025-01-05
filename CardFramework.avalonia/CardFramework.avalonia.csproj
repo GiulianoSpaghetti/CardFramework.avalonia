@@ -12,12 +12,15 @@
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>cardgame</PackageTags>
-    <PackageReleaseNotes>Ricompilato col dotnet framework 9.0.1 e avalonia 11.2.2</PackageReleaseNotes>
+    <PackageReleaseNotes>Ricompilato col dotnet framework 9.0.1 e avalonia 11.2.3.
+Ora è commentato</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/numerunix/CardFramework.avalonia</RepositoryUrl>
     <Authors>numerone</Authors>
-    <Version>1.4.2</Version>
+    <Version>1.4.4</Version>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,7 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.2.2" />
+    <PackageReference Include="Avalonia" Version="11.2.3" />
     <PackageReference Include="Avalonia.BuildServices" Version="0.0.31" />
   </ItemGroup>
 

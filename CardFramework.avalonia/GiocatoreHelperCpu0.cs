@@ -1,5 +1,8 @@
 ﻿namespace org.altervista.numerone.framework
 {
+    /// <summary>
+    /// Classe che implementa il comportamento di un giocatore CPU di livello 1
+    /// </summary>
     public class GiocatoreHelperCpu0 : GiocatoreHelperCpu
     {
         /// <summary>

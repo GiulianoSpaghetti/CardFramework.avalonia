@@ -11,7 +11,10 @@ using Avalonia.Media.Imaging;
 
 namespace org.altervista.numerone.framework
 {
-  public  class Giocatore
+    /// <summary>
+    /// Identifica il giocatore
+    /// </summary>
+    public class Giocatore
 	{
 		/// <summary>
 		/// nome del giocatore
@@ -152,6 +155,10 @@ namespace org.altervista.numerone.framework
 		{
 			return mano[iCartaGiocata];
 		}
+		/// <summary>
+		/// setter del punteggio
+		/// </summary>
+		/// <returns>retituisce il punteggio corrente</returns>
 		public UInt16 GetPunteggio() { return punteggio; }
 		/// <summary>
 		/// Se è l'utente imposta la carta giocata come i, se è il computer elabora una carta da giocare essendo il primo di mano

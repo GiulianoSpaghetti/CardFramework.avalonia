@@ -9,6 +9,9 @@
 
 namespace org.altervista.numerone.framework
 {
+    /// <summary>
+    /// Interfaccia per modificare il comportamento della classe giocatore
+    /// </summary>
     public interface GiocatoreHelper
 	{
         /// <summary>

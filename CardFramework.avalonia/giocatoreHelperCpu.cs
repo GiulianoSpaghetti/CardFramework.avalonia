@@ -11,6 +11,9 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace org.altervista.numerone.framework
 {
+    /// <summary>
+    /// Interfaccia per modificare il comportamento della classe cpu
+    /// </summary>
     public abstract class GiocatoreHelperCpu : GiocatoreHelper
     {
         /// <summary>

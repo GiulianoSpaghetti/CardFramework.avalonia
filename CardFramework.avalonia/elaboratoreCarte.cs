@@ -9,6 +9,9 @@
 
 namespace org.altervista.numerone.framework
 {
+    /// <summary>
+    /// Interfaccia per modificare il comportamento della classe mazzo
+    /// </summary>
     public interface ElaboratoreCarte
     {
         /// <summary>

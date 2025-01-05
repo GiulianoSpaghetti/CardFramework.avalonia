@@ -9,6 +9,9 @@
 
 namespace org.altervista.numerone.framework
 {
+    /// <summary>
+    /// Classe che identifica il mazzo di gioco
+    /// </summary>
     public class Mazzo
     {
         /// <summary>

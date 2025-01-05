@@ -14,6 +14,9 @@ using System.Reflection;
 
 namespace org.altervista.numerone.framework
 {
+    /// <summary>
+    /// Indica la struttura carta che identifica una carta del mazzo
+    /// </summary>
     public class Carta
     {
         private readonly UInt16 seme,
@@ -89,11 +92,16 @@ namespace org.altervista.numerone.framework
         /// <returns>il seme in formato stringa della carta</returns>
         public string GetSemeStr() { return semeStr; }
         /// <summary>
-        /// Dice se due carte hsnno lo stesso seme
+        /// Dice se due carte hanno lo stesso seme
         /// </summary>
         /// <param name="c1">carta con cui confrontare il seme, può essere null</param>
         /// <returns>true se la carta chiamante ha lo stesso seme di c1</returns>
         public bool StessoSeme(Carta c1) { if (c1 == null) return false; else return seme == c1.GetSeme(); }
+        /// <summary>
+        /// Compara due carte
+        /// </summary>
+        /// <param name="c1">carta con cui confrontare il seme, può essere null</param>
+		/// <returns>-1 se maggiore la prima, zero se uguale, 1 se maggiore la seconda</returns>
         public int CompareTo(Carta c1)
         {
             if (c1 == null)

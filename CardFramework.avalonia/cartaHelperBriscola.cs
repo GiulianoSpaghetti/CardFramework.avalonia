@@ -10,6 +10,9 @@
 
 namespace org.altervista.numerone.framework.briscola
 {
+    /// <summary>
+    /// Interfaccia per modificare il comportamento della classe carta in base al gioco della briscola
+    /// </summary>
     public class CartaHelper : org.altervista.numerone.framework.CartaHelper {
 		/// <summary>
 		/// numer intero indicante la carta di briscola, viene salvato per il compareto
