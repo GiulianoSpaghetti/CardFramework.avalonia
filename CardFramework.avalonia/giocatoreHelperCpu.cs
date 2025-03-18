@@ -25,7 +25,7 @@ namespace org.altervista.numerone.framework
         /// </summary>
         /// <param name="mano">mano del giocatore</param>
         /// <param name="numeroCarte">numero di carte</param>
-        /// <returns>indice della carta giocata indicante la briscoola più piccola</returns>
+        /// <returns>indice della carta giocata indicante la briscola più piccola</returns>
         protected UInt16 GetBriscola(Carta[] mano, UInt16 numeroCarte)
         {
             UInt16 i;

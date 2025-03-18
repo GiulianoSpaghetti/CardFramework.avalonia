@@ -7,20 +7,20 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <Title>CardFramework.avalonia</Title>
     <Description>Un framework per la costruzione di giochi di carte equi in avalonia</Description>
-    <Copyright>2024 Giulio Sorrentino</Copyright>
+    <Copyright>2024-2025 Giulio Sorrentino</Copyright>
     <PackageProjectUrl>https://github.com/numerunix/CardFramework.avalonia/blob/master/README.md</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>cardgame</PackageTags>
-    <PackageReleaseNotes>Ricompilato col dotnet framework 9.0.1 e avalonia 11.2.3.
-Ora è commentato</PackageReleaseNotes>
+    <PackageReleaseNotes>Ricompilato con avalonia 11.2.5 e dotnet 9.0.3</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/numerunix/CardFramework.avalonia</RepositoryUrl>
     <Authors>numerone</Authors>
-    <Version>1.4.4</Version>
+    <Version>1.4.10</Version>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	<EnableNETAnalyzers>True</EnableNETAnalyzers>
   </PropertyGroup>
 
   <ItemGroup>
@@ -43,7 +43,7 @@ Ora è commentato</PackageReleaseNotes>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.2.3" />
+    <PackageReference Include="Avalonia" Version="11.2.5" />
     <PackageReference Include="Avalonia.BuildServices" Version="0.0.31" />
   </ItemGroup>
 

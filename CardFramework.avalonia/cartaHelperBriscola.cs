@@ -109,7 +109,7 @@ namespace org.altervista.numerone.framework.briscola
         /// <summary>
         /// Retituisce la struttura indicante la carta di briscola
         /// </summary>
-        /// <returns></returns>
+        /// <returns>la struttura indicante la carta di briscola</returns>
 		public Carta GetCartaBriscola() { return Carta.GetCarta(CartaBriscola); }
         /// <summary>
         /// Compara le due carte per stabilire ch sia la maggiore

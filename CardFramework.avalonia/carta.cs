@@ -177,7 +177,7 @@ namespace org.altervista.numerone.framework
         /// <summary>
         /// restituisce la struttura che identifica il valore di vbriscola
         /// </summary>
-        /// <returns></returns>
+        /// <returns>la struttura indicante la carta di briscola</returns>
         public static Carta GetCartaBriscola() { return (helper as org.altervista.numerone.framework.briscola.CartaHelper).GetCartaBriscola(); }
         public override string ToString()
         {

@@ -66,7 +66,7 @@ namespace org.altervista.numerone.framework
 		/// <returns>il nome del giocatore</returns>
 		public string GetNome() { return nome; }
 		/// <summary>
-		/// settere del nome
+		/// setter del nome
 		/// </summary>
 		/// <param name="n">nome del giocatore</param>
 		public void SetNome(string n) { nome = n; }

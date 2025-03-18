@@ -41,6 +41,8 @@
                     carta = GetPrimaCartaConSeme(mano, numeroCarte, c);
                 else
                     carta = 0;
+            if (carta >= numeroCarte)
+                carta = 0;
             return carta;
         }
     }

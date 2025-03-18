@@ -1,6 +1,6 @@
-Framework di numerone in maui per la realizzazione di giochi di carte.
+Framework di numerone in avalonia per la realizzazione di giochi di carte equi.
 La codebase è in .net, con l'aggiunta di un resourcedictionary da passare.
-Il resource dictionary deve includere 4 campi: bastoni, coppe, spade e denari da tradurre dall'italiano nella lingua desiderata, i 4 semi dei mazzi di carte italiane, o eventualmente francesi.
+Il resource dictionary deve includere 4 campi: bastoni, coppe, spade e denari da tradurre dall'italiano nella lingua desiderata, i 4 semi dei mazzi francesi, ovviamente tradottti.
 Il codice di apertura deve essere:
 
     o = LeggiOpzioni();
