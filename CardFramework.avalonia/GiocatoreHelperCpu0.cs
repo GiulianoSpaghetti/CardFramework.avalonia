@@ -43,6 +43,8 @@
                     carta = 0;
             if (carta >= numeroCarte)
                 carta = 0;
+            primoDiMano = false;
+            ultimoSemeGiocato = 5;
             return carta;
         }
     }

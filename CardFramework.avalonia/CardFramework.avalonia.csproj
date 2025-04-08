@@ -12,10 +12,10 @@
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>cardgame</PackageTags>
-    <PackageReleaseNotes>Ricompilato con avalonia 11.2.5 e dotnet 9.0.3</PackageReleaseNotes>
+    <PackageReleaseNotes>Ora iil poker insiste sullo stesso seme</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/numerunix/CardFramework.avalonia</RepositoryUrl>
     <Authors>numerone</Authors>
-    <Version>1.4.10</Version>
+    <Version>1.4.12</Version>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -43,7 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.2.5" />
+    <PackageReference Include="Avalonia" Version="11.2.6" />
     <PackageReference Include="Avalonia.BuildServices" Version="0.0.31" />
   </ItemGroup>
 

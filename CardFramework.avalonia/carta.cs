@@ -172,7 +172,8 @@ namespace org.altervista.numerone.framework
         /// setter dela classe che identifica il comportamento che le carte devono avere
         /// </summary>
         /// <param name="h">classe che incapsula il comportamti dekke caere</param>
-        public static void SetHelper(CartaHelper h) { helper = h; }
+        /// <param name="m">Mazzo di carte per vedere se si cerca di cambiare l'helper a partita in corso</param>
+        public static void SetHelper(CartaHelper h, Mazzo m) { if (m.GetNumeroCarte()==carte.Length) helper = h; }
 
         /// <summary>
         /// restituisce la struttura che identifica il valore di vbriscola
@@ -188,5 +189,7 @@ namespace org.altervista.numerone.framework
                 s += " ";
             return s;
         }
+
+        public static CartaHelper GetHelper() { return helper; }
     }
 }

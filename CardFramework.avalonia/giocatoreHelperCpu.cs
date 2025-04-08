@@ -20,6 +20,8 @@ namespace org.altervista.numerone.framework
         /// struttura indicante la carta di briscola
         /// </summary>
         protected readonly Carta briscola;
+        protected bool primoDiMano;
+        protected UInt16 ultimoSemeGiocato;
         /// <summary>
         /// Retituisce la prima carta di briscola (la più piccola in mano al giocatore
         /// </summary>
@@ -41,6 +43,8 @@ namespace org.altervista.numerone.framework
         public GiocatoreHelperCpu(UInt16 b)
         {
             briscola = Carta.GetCarta(b);
+            primoDiMano = false;
+            ultimoSemeGiocato = 5;
         }
 
         /// <summary>
@@ -103,13 +107,21 @@ namespace org.altervista.numerone.framework
         /// <param name="x">indice della carta da giocare, qui non considerato</param>
         /// <param name="mano">vettore delle carte da prendere in esame</param>
         /// <param name="numeroCarte">dimensione del vettore delle carte</param>
-        /// <returns>l'indice dela carta da giocare</returns>
-        public UInt16 Gioca(UInt16 x, Carta[] mano, UInt16 numeroCarte)
+        /// <param name="stessoSeme">Indica se si sta giocando la variante poker o la variante briscola</param>
+        /// <returns>l'indice della carta da giocare</returns>
+        public UInt16 Gioca(UInt16 x, Carta[] mano, UInt16 numeroCarte, bool stessoSeme=false)
         {
             UInt16 i;
+            if (primoDiMano && stessoSeme) {
+                i = GetPrimaCartaConSeme(mano, numeroCarte, Carta.GetCarta(Carta.GetHelper().GetNumero(ultimoSemeGiocato, 1)));
+                if (i < numeroCarte)
+                    return i;
+            }
             for (i = (UInt16)(numeroCarte - 1); i<numeroCarte; i--) ;
             if ((i >= numeroCarte) || (mano[i].GetPunteggio() > 4 || briscola.StessoSeme(mano[i])))
                 i = 0;
+            primoDiMano = true;
+            ultimoSemeGiocato = mano[i].GetSeme();
             return i;
 
         }
