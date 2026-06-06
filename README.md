@@ -1,3 +1,5 @@
+[![.NET MAUI Build](https://github.com/GiulianoSpaghetti/CardFramework.avalonia/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/GiulianoSpaghetti/CardFramework.avalonia/actions/workflows/dotnet-desktop.yml)
+
 Framework di numerone in avalonia per la realizzazione di giochi di carte equi.
 La codebase è in .net, con l'aggiunta di un resourcedictionary da passare.
 Il resource dictionary deve includere 4 campi: bastoni, coppe, spade e denari da tradurre dall'italiano nella lingua desiderata, i 4 semi dei mazzi francesi, ovviamente tradottti.
