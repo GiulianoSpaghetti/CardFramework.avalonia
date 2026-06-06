@@ -1,21 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <Title>CardFramework.avalonia</Title>
     <Description>Un framework per la costruzione di giochi di carte equi in avalonia</Description>
-    <Copyright>2024-2025 Giulio Sorrentino</Copyright>
-    <PackageProjectUrl>https://github.com/numerunix/CardFramework.avalonia/blob/master/README.md</PackageProjectUrl>
+    <Copyright>2024-2026 Giulio Sorrentino</Copyright>
+    <PackageProjectUrl>https://github.com/GiulianoSpaghetti/CardFramework.avalonia/blob/master/README.md</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>cardgame</PackageTags>
-    <PackageReleaseNotes>Ora iil poker insiste sullo stesso seme</PackageReleaseNotes>
-    <RepositoryUrl>https://github.com/numerunix/CardFramework.avalonia</RepositoryUrl>
+    <PackageReleaseNotes>Recompiled with dotnet 10.0.8 and avalonia 12.0.4</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/GiulianoSpaghetti/CardFramework.avalonia</RepositoryUrl>
     <Authors>numerone</Authors>
-    <Version>1.4.12</Version>
+    <Version>1.5.8</Version>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -43,8 +43,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.2.6" />
-    <PackageReference Include="Avalonia.BuildServices" Version="0.0.31" />
+    <PackageReference Include="Avalonia" />
+    <PackageReference Include="Avalonia.BuildServices">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
-
 </Project>
