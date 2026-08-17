@@ -2,7 +2,7 @@
 
 Framework di numerone in avalonia per la realizzazione di giochi di carte equi, con la particolarità che vuole estrarre la logica di gioco dalla logica di dare le carte, che è sempre la stessa.
 
-Attualmente sono presenti due logiche di gioco: una per la briscola ed una per il solitario la torre di babele, e per gestire le logiche di gioco bisogna implementare le interfacce (contratti) CartaHelper e GiocatoreHelper, con GiocatoreHelper che deve essere implementato sia per l'utente che per la CPU.
+Attualmente sono presenti tre logiche di gioco: una per la briscola, una per la briscola con risposta di seme ed una per il solitario la torre di babele, e per gestire le logiche di gioco bisogna implementare le interfacce (contratti) CartaHelper e GiocatoreHelper, con GiocatoreHelper che deve essere implementato sia per l'utente che per la CPU.
 
 Questo introduce un lieve overhead, ma è gestito e sopratutto è difficilmente superabile, perché la logica di gioco agli scheletri viene passata in fase di inizializzazione ed è gestita come variabile di classe non di istanza (con lo static come il c++ insegna, non come ottimizzazione per ottenere una sola variabile).
 
