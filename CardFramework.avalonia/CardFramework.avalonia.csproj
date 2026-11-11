@@ -15,7 +15,7 @@
     <PackageReleaseNotes>Recompiled with dotnet 10.0.14 and avalonia 11.1.4</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/GiulianoSpaghetti/CardFramework.avalonia</RepositoryUrl>
     <Authors>numerone</Authors>
-    <Version>1.5.13</Version>
+    <Version>1.5.14</Version>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
